@@ -1,0 +1,82 @@
+{% extends 'user/basic.html' %}
+{% block title %} About Us
+{% endblock title %}
+{% block body %}
+{% load static %}
+<div class="container block">
+        {% comment %} {{ form.as_p}} {% endcomment %}
+
+        
+
+        <form action="{% url 'Event Registeration' %}" method="post" >
+            {% csrf_token %}
+           <form-title><h1>Event Registration</h1></form-title>
+            {% for field in form %}
+                <div class="form-group">
+            <label>{{ field.name }}</label>
+            {{field}}
+            </div>
+        {% endfor %}
+            
+            {% comment %} <div class="form-group">
+            <label>Contact No:</label>
+            <input type="text" class="form-control" id="contact_no">
+            </div>
+            <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+            <label for="sel1">Event Category:</label>
+            <select class="form-control" id="E_C">
+            <option>Social Gathering</option>
+            <option>Paty</option>
+            <option>Seminar</option>
+            <option>Business Meeting</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label>Date:</label>
+            <input type="datetime-local" class="form-control" id="date">
+            </div>
+            <div class="form-group">
+            <label>Select Venue 1:</label>
+            <select class="form-control" id="V1">
+            <option>MMH</option>
+            <option>TGB</option>
+            <option>A.V. Hall</option>
+            <option>Raj Part Plot</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label>Select Venue 2:</label>
+            <select class="form-control" id="V2">
+            <option>MMH</option>
+            <option>TGB</option>
+            <option>A.V. Hall</option>
+            <option>Raj Part Plot</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label>Select Venue 3:</label>
+            <select class="form-control" id="V3">
+            <option>MMH</option>
+            <option>TGB</option>
+            <option>A.V. Hall</option>
+            <option>Raj Part Plot</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label>Budget:</label>
+            <input type="text" class="form-control" id="budget">
+            </div>
+            <div class="form-group">
+            <label for="comment">Let Us Know Your Special Requirements:</label>
+            <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div> {% endcomment %}
+            <div class="form-group text-center">
+            <button type="submit" class="btn btn-default" style="align-items: center">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock body %}
